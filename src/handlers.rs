@@ -22,7 +22,7 @@ pub fn parse_csv(reader: &String) -> Result<Vec<Option<AccountEnriched>>, Box<dy
         .from_path(reader);
 
     if let Ok(mut rdr) = rdr_result {
-        for result in rdr.deserialize().skip(1) {
+        for result in rdr.deserialize().skip(1) { // skip the headers
 
             let record: Transaction = result?;
             let client_id = record.account_id as usize;
