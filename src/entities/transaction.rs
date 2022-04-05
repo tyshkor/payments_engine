@@ -1,5 +1,6 @@
-use serde::{Serialize, Deserialize};
 use std::collections::BTreeMap;
+
+use serde::{Serialize, Deserialize};
 
 use crate::entities::transaction_type::TransactionType;
 
@@ -18,7 +19,7 @@ impl Transaction {
                 map.insert(self.id, self);
             },
             _ => {
-                map.insert((map.len() + 1) as u32, self);
+                map.insert((map.len() + 1) as u32, self); // unique, local to the account, id
             }
         }
     }

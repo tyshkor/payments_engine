@@ -2,9 +2,7 @@ mod entities;
 mod handlers;
 mod utils;
 
-use std::process;
-use std::io;
-use std::env;
+use std::{process, env};
 
 use handlers::*;
 use utils::*;
